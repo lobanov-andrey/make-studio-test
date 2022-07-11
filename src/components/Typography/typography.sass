@@ -1,0 +1,57 @@
+@import '../../variables.sass'
+    
+.headline
+    margin: 0
+    &-h1
+        font-size: 48px
+        line-height: 56px
+        font-weight: 700
+    &-h2
+        font-size: 32px
+        line-height: 40px
+        font-weight: 700
+    &-h3
+        font-size: 24px
+        line-height: 32px
+        font-weight: 500
+    &-h4
+        font-size: 18px
+        line-height: 28px
+        font-weight: 500
+
+@media screen and (max-width: $mobileMaxWidth - 1)
+    .headline
+        &-h1
+            font-size: 32px
+            line-height: 40px
+        &-h2
+            font-size: 28px
+            line-height: 36px
+        &-h3
+            font-size: 20px
+            line-height: 28px
+
+.paragraph
+    margin: 0
+    &-lead
+        font-size: 24px
+        line-height: 32px
+    &-big
+        font-size: 18px
+        line-height: 28px
+    &-simple
+        font-size: 16px
+        line-height: 24px
+        &_grey
+            color: #7D7D7D
+    &-auxiliary
+        font-size: 14px
+        line-height: 20px
+        &_grey
+            color: #7D7D7D
+
+@media screen and (max-width: $mobileMaxWidth - 1)
+    .paragraph
+        &-lead
+            font-size: 20px
+            line-height: 28px

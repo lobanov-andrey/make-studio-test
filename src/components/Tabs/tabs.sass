@@ -1,0 +1,30 @@
+.tabs
+    &__head
+        overflow-y: auto
+        display: flex
+        position: relative
+        &::after
+            content: ""
+            position: absolute
+            left: 0
+            bottom: 0px
+            right: 0
+            height: 1px
+            background: #CBCBCC
+            z-index: 1
+    &__tab
+        padding-bottom: 14px
+        margin-right: 32px
+        position: relative
+        cursor: pointer
+        &_active::after
+            content: ""
+            position: absolute
+            left: 0
+            bottom: 0px
+            right: 0
+            height: 2px
+            background: #3E29E3
+            z-index: 2
+        &:last-child
+            margin-right: 0px

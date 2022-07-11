@@ -1,0 +1,71 @@
+.input
+    &__top-indent
+        height: 24px
+    &__bottom-indent
+        height: 26px
+    &__shell
+        position: relative
+        font-size: 16px
+    &__field
+        width: 100%
+        outline: none
+        border: none
+        padding: 0
+        margin: 0
+        padding: 4px 0 6px 0
+        &:hover + .input__line
+            height: 2px
+            background: #3E29E3
+        &:focus + .input__line
+            height: 4px
+            background: #3E29E3
+    &__line
+        content: ""
+        background: #AEADAE
+        height: 2px
+        width: 100%
+        left: 0
+        top: 100%
+        right: 0
+        display: block
+        position: absolute
+        &_error
+            height: 4px
+            background: #E80F3B  !important
+    &__placeholder
+        position: absolute
+        bottom: 50%
+        transform: translateY(50%)
+        transition: transform 0.25s
+        pointer-events: none
+        color: #7D7D7D
+        &_top
+            bottom: 100%
+            transform: translateY(0%)
+            font-size: 12px
+            line-height: 20px
+        &_error
+            color: #E80F3B
+    &__error
+        position: absolute
+        top: calc(100% + 6px)
+        left: 0
+        font-size: 14px
+        line-height: 20px
+        color: #E80F3B
+    &__error-animation
+        will-change: transform
+        &-enter 
+            opacity: 0
+            transform: translateX(3px)
+        &-enter-active
+            opacity: 1
+            transform: translateX(0)
+            transition: opacity 300ms, transform 300ms
+        &-exit 
+            opacity: 1
+            transform: translateX(0px)
+        &-exit-active 
+            opacity: 0
+            transform: translateX(3px)
+                transition: opacity 300ms, transform 300ms

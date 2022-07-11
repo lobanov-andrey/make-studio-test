@@ -1,0 +1,35 @@
+.button
+    padding: 16px
+    border-radius: 32px
+    background: #3F29E2
+    border: none
+    font-size: 16px
+    line-height: 24px
+    color: white
+    width: 100%
+    transition: 0.3s
+    position: relative
+    overflow: hidden
+    &:disabled
+        background: #CBCBCC
+        &::before
+            display: none
+    &__text
+        position: relative
+        z-index: 2
+    &::before
+        background: radial-gradient(50.02% 50% at 50% 50%, #DD80ED 21.88%, rgba(217, 217, 217, 0) 100%)
+        width: 400px
+        height: 400px
+        content: ""
+        display: block
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(calc(-50% + -75px), calc(-50% + 75px))
+        transition: 0.6s
+        transition-timing-function: ease
+    &:hover::before
+        transform: translate(calc(-50% + 75px), calc(-50% + -75px))
+    &:active::before
+        transform: translate(calc(-50% + 0px), calc(-50% + -75px))
