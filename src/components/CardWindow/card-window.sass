@@ -1,0 +1,76 @@
+.card-window
+    position: fixed
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background: url('images/background.jpg')
+    background-size: cover
+    padding: 8px
+    display: flex
+    align-content: stretch
+    justify-content: space-between
+    box-sizing: border-box
+    z-index: 100
+    &__blank
+        width: 760px
+        max-width: 760px
+        margin: 0 16px 0 0
+        background: #fff
+        padding: 24px 56px 40px 56px
+        display: flex
+        flex-wrap: wrap
+        align-content: space-between
+    &__close
+        width: 24px
+        height: 24px
+        display: flex
+        flex-wrap: wrap
+        align-content: center
+        cursor: pointer
+        &::after,
+        &::before
+            content: ""
+            width: 100%
+            height: 2px
+            background: #fff
+        &::after
+            transform: translateY(-1px) rotate(45deg) 
+        &::before
+            transform: translateY(1px) rotate(-45deg)
+    &__phone
+        font-size: 18px
+        line-height: 28px
+        text-decoration: none
+        color: #1B1B1B
+        font-weight: 500
+    &__link
+        display: flex
+        align-items: center
+        text-decoration: none
+        &__icon
+            background: #FFFFFF
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08)
+            margin: 0 24px 0 0
+            width: 48px
+            height: 48px
+            border-radius: 50%
+            display: flex
+            align-items: center
+            justify-content: center
+            &__picture
+                width: 16px
+                height: 16px
+        &__text
+            color: #3E29E3
+            font-size: 16px
+            line-height: 24px
+    &__open-animation
+        will-change: transform
+        &-enter 
+            opacity: 0
+            scale: 0.95
+        &-enter-active
+            opacity: 1
+            scale: 1
+            transition: opacity 300ms, scale 300ms

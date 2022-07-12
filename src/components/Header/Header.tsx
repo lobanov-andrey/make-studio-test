@@ -1,19 +1,19 @@
+import Logo from 'components/Logo/Logo'
 import { AuxiliaryParagraph } from 'components/Typography/Typography'
-import logo from 'images/logo.svg'
 import React from 'react'
 import './header.sass'
 
-export default function Header() {
+export default function Header({ onClickMenu }: { onClickMenu: () => void }) {
   return (
     <header className="header">
       <div className="header__left">
-        <img src={logo} className="header__logo" />
+        <Logo />
         <div className="header__info">
           <AuxiliaryParagraph>Иванов</AuxiliaryParagraph>
           <AuxiliaryParagraph color="grey">Иван Иванович</AuxiliaryParagraph>
         </div>
       </div>
-      <div className="header__menu" />
+      <div onClick={onClickMenu} className="header__menu" />
     </header>
   )
 }

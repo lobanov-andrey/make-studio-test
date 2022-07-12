@@ -1,8 +1,8 @@
 import React from 'react'
 import './columns.sass'
 
-export default function Columns({ children }: { children?: React.ReactNode }) {
-  return <div className="columns">{children}</div>
+export default function Columns({ children, vertical }: { children?: React.ReactNode; vertical?: 'center' }) {
+  return <div className={`columns columns_vertical-${vertical}`}>{children}</div>
 }
 
 type DesktopColumn = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
@@ -22,7 +22,7 @@ export function Column({
 }) {
   return (
     <div
-      className={`columns__column columns__column_desktop-${desktop} columns__column_tablet-${tablet} columns__column_mobile-${mobile}`}
+      className={`columns__column columns__column_desktop-${desktop} columns__column_tablet-${tablet} columns__column_mobile-${mobile} `}
     >
       {children}
     </div>

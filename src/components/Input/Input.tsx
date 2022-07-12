@@ -15,6 +15,7 @@ export default function Input(
         for (let index = 0; index < errors.length; index++) {
           const error = errors[index]
           setError(error.validReqex ? (error.validReqex.test(`${value}`) ? '' : error.error) : '')
+          break
         }
       } else {
         setError('')
