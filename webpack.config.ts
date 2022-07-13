@@ -1,4 +1,3 @@
-import { CleanWebpackPlugin } from 'clean-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import path from 'path'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
@@ -11,7 +10,6 @@ module.exports = (env, args): webpack.Configuration => {
   const production = args.mode == 'production'
 
   const plugins: webpack.Configuration['plugins'] = [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({ template: './public/index.html' }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
@@ -33,7 +31,7 @@ module.exports = (env, args): webpack.Configuration => {
       static: {
         directory: path.join(__dirname, '/public'),
       },
-      port: 7777,
+      port: 8888,
       open: true,
     },
     module: {

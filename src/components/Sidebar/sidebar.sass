@@ -1,7 +1,16 @@
+@import '../../variables.sass'
+
 .sidebar
+    position: sticky
+    top: 20px
     &__link
         display: block
-        color: #7D7D7D
+        color: $color-grey
         text-decoration: none
+        &_active
+            color: $color-purple
         &:hover
-            color: #1B1B1B
+            color: $color-black
+@media screen and (max-width: $mobileMaxWidth - 1)
+    .sidebar
+        position: static

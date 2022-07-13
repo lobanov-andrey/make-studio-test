@@ -21,7 +21,7 @@ export default function Checkbox({
     <label className="checkbox">
       <input onChange={change} className="checkbox__input" type="checkbox" />
       <span className="checkbox__square">
-        <CSSTransition in={value} timeout={300} classNames="checkbox__square-animation">
+        <CSSTransition in={value} timeout={300} classNames="checkbox__square-animation" unmountOnExit>
           <svg
             className="checkbox__square__icon"
             width="14"
@@ -31,7 +31,7 @@ export default function Checkbox({
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               clip-rule="evenodd"
               d="M5.15789 7.14286L12.5263 0L14 1.42857L5.15789 10L0 5L1.47368 3.57143L5.15789 7.14286Z"
               fill="white"

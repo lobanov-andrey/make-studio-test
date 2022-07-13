@@ -19,12 +19,36 @@ $mobileColumnIndent: 12px
     justify-content: flex-start
     flex-wrap: wrap
     width: 100%
-    &_vertical-center
-        align-items: center
+    &_vertical
+        &-center
+            align-items: center
+        &-end
+            align-items: flex-end
+    &_horizontal
+        &-center
+            justify-content: center
+        &-end
+            justify-content: flex-end
+        &-stretch
+            align-items: stretch
     &__column
         box-sizing: border-box
         width: 100%
         padding: 0 #{$desktopColumnIndent}
+        &_vertical
+            &-center
+                display: flex
+                align-items: center
+            &-end
+                display: flex
+                align-items: flex-end
+        &_horizontal
+            &-center
+                display: flex
+                justify-content: center
+            &-end
+                display: flex
+                justify-content: flex-end
         .columns
             margin: 0 -#{$desktopColumnIndent}
         @each $desktopColumn in $desktopColumns

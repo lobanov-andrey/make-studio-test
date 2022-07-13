@@ -1,58 +1,71 @@
 import React from 'react'
 import './typography.sass'
 
-export function H1(props: React.HTMLAttributes<HTMLHeadingElement>) {
+type HeadlineProps = React.HTMLAttributes<HTMLHeadingElement> & { anchor?: string }
+
+export function H1(props: HeadlineProps) {
   return (
     <h1 className="headline headline-h1" {...props}>
+      {props.anchor ? <span className="headline__anchor" id={props.anchor}></span> : null}
       {props.children}
     </h1>
   )
 }
-export function H2(props: React.HTMLAttributes<HTMLHeadingElement>) {
+export function H2(props: HeadlineProps) {
   return (
     <h2 className="headline headline-h2" {...props}>
+      {props.anchor ? <span className="headline__anchor" id={props.anchor}></span> : null}
       {props.children}
     </h2>
   )
 }
-export function H3(props: React.HTMLAttributes<HTMLHeadingElement>) {
+export function H3(props: HeadlineProps) {
   return (
     <h3 className="headline headline-h3" {...props}>
+      {props.anchor ? <span className="headline__anchor" id={props.anchor}></span> : null}
       {props.children}
     </h3>
   )
 }
-export function H4(props: React.HTMLAttributes<HTMLHeadingElement>) {
+export function H4(props: HeadlineProps) {
   return (
     <h4 className="headline headline-h4" {...props}>
+      {props.anchor ? <span className="headline__anchor" id={props.anchor}></span> : null}
       {props.children}
     </h4>
   )
 }
-export function LeadParagraph(props: React.HTMLAttributes<HTMLParagraphElement>) {
+
+type ParagraphProps = React.HTMLAttributes<HTMLParagraphElement> & { anchor?: string; color?: 'grey' }
+
+export function LeadParagraph(props: ParagraphProps) {
   return (
-    <p className="paragraph paragraph-lead" {...props}>
+    <p className="paragraph paragraph_${props.color} paragraph-lead" {...props}>
+      {props.anchor ? <span className="paragraph__anchor" id={props.anchor}></span> : null}
       {props.children}
     </p>
   )
 }
-export function BigParagraph(props: React.HTMLAttributes<HTMLParagraphElement>) {
+export function BigParagraph(props: ParagraphProps) {
   return (
-    <p className="paragraph paragraph-big" {...props}>
+    <p className="paragraph paragraph_${props.color} paragraph-big" {...props}>
+      {props.anchor ? <span className="paragraph__anchor" id={props.anchor}></span> : null}
       {props.children}
     </p>
   )
 }
-export function Paragraph(props: { color?: 'grey' } & React.HTMLAttributes<HTMLParagraphElement>) {
+export function Paragraph(props: ParagraphProps) {
   return (
-    <p className={`paragraph paragraph-simple paragraph-simple_${props.color}`} {...props}>
+    <p className={`paragraph paragraph_${props.color} paragraph-simple`} {...props}>
+      {props.anchor ? <span className="paragraph__anchor" id={props.anchor}></span> : null}
       {props.children}
     </p>
   )
 }
-export function AuxiliaryParagraph(props: { color?: 'grey' } & React.HTMLAttributes<HTMLParagraphElement>) {
+export function AuxiliaryParagraph(props: ParagraphProps) {
   return (
-    <p className={`paragraph paragraph-auxiliary paragraph-auxiliary_${props.color} `} {...props}>
+    <p className={`paragraph paragraph_${props.color} paragraph-auxiliary `} {...props}>
+      {props.anchor ? <span className="paragraph__anchor" id={props.anchor}></span> : null}
       {props.children}
     </p>
   )

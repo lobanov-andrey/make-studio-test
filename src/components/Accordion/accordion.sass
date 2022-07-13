@@ -1,8 +1,10 @@
+@import '../../variables.sass'
+    
 .accordion
     position: relative
     padding: 15px 0
     &:hover &__line
-        background: #3E29E3
+        background: $color-purple
     &__line
         width: 100%
         height: 1px
@@ -10,10 +12,10 @@
         left: 0
         bottom: 0
         right: 0
-        background: #CBCBCC
+        background: $color-light-grey
         display: block
         &_active
-            background: #3E29E3 !important
+            background: $color-purple !important
             height: 2px
     &__head
         display: flex
@@ -21,15 +23,15 @@
         align-items: center
         cursor: pointer
     &:hover &__title
-        color: #1B1B1B
+        color: $color-black
     &__title
         font-size: 16px
         line-height: 24px
-        color: #7D7D7D
+        color: $color-grey
         transition: 0.25s
         animation-timing-function: ease
         &_active
-            color: #3E29E3 !important
+            color: $color-purple !important
     &__right
         display: block
         transition: 0.25s

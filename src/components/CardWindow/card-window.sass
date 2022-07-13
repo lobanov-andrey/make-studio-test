@@ -1,3 +1,23 @@
+@import '../../variables.sass'
+
+@mixin close($color)
+    width: 24px
+    height: 24px
+    display: flex
+    flex-wrap: wrap
+    align-content: center
+    cursor: pointer
+    &::after,
+    &::before
+        content: ""
+        width: 100%
+        height: 2px
+        background: $color
+    &::after
+        transform: translateY(-1px) rotate(45deg) 
+    &::before
+        transform: translateY(1px) rotate(-45deg)
+    
 .card-window
     position: fixed
     left: 0
@@ -8,48 +28,34 @@
     background-size: cover
     padding: 8px
     display: flex
-    align-content: stretch
+    align-items: stretch
     justify-content: space-between
     box-sizing: border-box
     z-index: 100
     &__blank
         width: 760px
         max-width: 760px
-        margin: 0 16px 0 0
-        background: #fff
+        background: $color-white
         padding: 24px 56px 40px 56px
         display: flex
         flex-wrap: wrap
         align-content: space-between
-    &__close
-        width: 24px
-        height: 24px
-        display: flex
-        flex-wrap: wrap
-        align-content: center
-        cursor: pointer
-        &::after,
-        &::before
-            content: ""
+        &__top
             width: 100%
-            height: 2px
-            background: #fff
-        &::after
-            transform: translateY(-1px) rotate(45deg) 
-        &::before
-            transform: translateY(1px) rotate(-45deg)
+    &__close
+        @include close($color-white)
     &__phone
         font-size: 18px
         line-height: 28px
         text-decoration: none
-        color: #1B1B1B
+        color: $color-black
         font-weight: 500
     &__link
         display: flex
         align-items: center
         text-decoration: none
         &__icon
-            background: #FFFFFF
+            background: $color-white
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08)
             margin: 0 24px 0 0
             width: 48px
@@ -62,15 +68,32 @@
                 width: 16px
                 height: 16px
         &__text
-            color: #3E29E3
+            color: $color-purple
             font-size: 16px
             line-height: 24px
     &__open-animation
         will-change: transform
         &-enter 
             opacity: 0
-            scale: 0.95
+            transform: scale(0.95)
         &-enter-active
             opacity: 1
-            scale: 1
-            transition: opacity 300ms, scale 300ms
+            transform: scale(1)
+            transition: opacity 300ms, transform 300ms
+        &-exit 
+            opacity: 1
+            transform: scale(1)
+        &-exit-active
+            opacity: 0
+            transform: scale(0.95)
+            transition: opacity 300ms, transform 300ms
+
+
+@media screen and (max-width: $tabletMaxWidth - 1)
+    .card-window
+        &__blank
+            padding: 24px
+            &__close
+                @include close($color-black)
+        &__close
+            display: none

@@ -23,7 +23,7 @@ export default function Radio<T>({
   return (
     <div className="radio">
       {options.map((option, index) => (
-        <label className="radio__option" onClick={() => change(option.id)}>
+        <label key={`${option.id}`} className="radio__option" onClick={() => change(option.id)}>
           <input className="radio__option__input" type="radio" name={radioID} />
           <span className="radio__option__cell">
             <CSSTransition in={option.id == currentID} timeout={300} classNames="radio__option__cell-animation" unmountOnExit>

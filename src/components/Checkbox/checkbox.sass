@@ -1,8 +1,8 @@
+@import '../../variables.sass'
+    
 .checkbox
     position: relative
     display: flex
-    align-items: flex-start
-    align-content: flex-start
     cursor: pointer
     &__input
         opacity: 0
@@ -13,26 +13,27 @@
         width: 0
         height: 0
         &:checked ~ .checkbox__square
-            border: 2px solid #3E29E3
-            background: #3E29E3
+            border: 2px solid $color-purple
+            background: $color-purple
         &:checked ~ .checkbox__text
-            color: #1B1B1B
+            color: $color-black
     &:hover &__square
-        border: 2px solid #3E29E3
+        border: 2px solid $color-purple
     &:hover &__text
-        color: #1B1B1B
+        color: $color-black
     &__square
-        width: 24px
+        min-width: 24px
         height: 24px
         margin: 0 16px 0 0
-        border: 2px solid #AEADAE
+        border: 2px solid $color-medium-grey
         display: flex
         align-items: center
         justify-content: center
+        transition: 0.3s
         &__icon
             width: 60%
     &__text
-        color: #7D7D7D
+        color: $color-grey
         font-size: 16px
         line-height: 24px
         padding: 2px 0 0 0
@@ -40,15 +41,15 @@
         will-change: transform
         &-enter 
             opacity: 0
-            transform: translateX(3px)
+            transform: translateY(3px)
         &-enter-active
             opacity: 1
-            transform: translateX(0)
+            transform: translateY(0)
             transition: opacity 300ms, transform 300ms
         &-exit 
             opacity: 1
-            transform: translateX(0px)
+            transform: translateY(0px)
         &-exit-active 
             opacity: 0
-            transform: translateX(3px)
-                transition: opacity 300ms, transform 300ms
+            transform: translateY(3px)
+            transition: opacity 300ms, transform 300ms

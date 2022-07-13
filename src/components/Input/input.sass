@@ -1,3 +1,5 @@
+@import '../../variables.sass'
+    
 .input
     &__top-indent
         height: 24px
@@ -15,13 +17,13 @@
         padding: 4px 0 6px 0
         &:hover + .input__line
             height: 2px
-            background: #3E29E3
+            background: $color-purple
         &:focus + .input__line
             height: 4px
-            background: #3E29E3
+            background: $color-purple
     &__line
         content: ""
-        background: #AEADAE
+        background: $color-medium-grey
         height: 2px
         width: 100%
         left: 0
@@ -31,41 +33,42 @@
         position: absolute
         &_error
             height: 4px
-            background: #E80F3B  !important
+            background: $color-red  !important
     &__placeholder
         position: absolute
         bottom: 50%
         transform: translateY(50%)
         transition: transform 0.25s
         pointer-events: none
-        color: #7D7D7D
+        color: $color-grey
         &_top
             bottom: 100%
             transform: translateY(0%)
             font-size: 12px
             line-height: 20px
         &_error
-            color: #E80F3B
+            color: $color-red
     &__error
         position: absolute
         top: calc(100% + 6px)
         left: 0
         font-size: 14px
         line-height: 20px
-        color: #E80F3B
+        color: $color-red
+        display: block
     &__error-animation
         will-change: transform
         &-enter 
             opacity: 0
-            transform: translateX(3px)
+            transform: translateY(3px)
         &-enter-active
             opacity: 1
-            transform: translateX(0)
+            transform: translateY(0)
             transition: opacity 300ms, transform 300ms
         &-exit 
             opacity: 1
-            transform: translateX(0px)
+            transform: translateY(0px)
         &-exit-active 
             opacity: 0
-            transform: translateX(3px)
-                transition: opacity 300ms, transform 300ms
+            transform: translateY(3px)
+            transition: opacity 300ms, transform 300ms

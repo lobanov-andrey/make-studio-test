@@ -32,14 +32,14 @@ export default function Input(
     <div className="input">
       <div className="input__top-indent"></div>
       <div className="input__shell">
+        <CSSTransition in={!!error} timeout={300} classNames="input__error-animation">
+          <span className="input__error">{error}</span>
+        </CSSTransition>
         <span
           className={`input__placeholder ${value ? 'input__placeholder_top' : ''} ${error ? 'input__placeholder_error' : ''}`}
         >
           {props.placeholder}
         </span>
-        <CSSTransition in={!!error} timeout={300} classNames="input__error-animation">
-          <span className="input__error">{error}</span>
-        </CSSTransition>
         <input onChange={change} className="input__field" type="email" {...props} placeholder="" />
         <div className={`input__line ${error ? 'input__line_error' : ''}`} />
       </div>

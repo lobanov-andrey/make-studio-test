@@ -2,6 +2,12 @@
     
 .headline
     margin: 0
+    color: $color-black
+    position: relative
+    &__anchor
+        position: absolute
+        bottom: calc(100% + 32px)
+        left: 0
     &-h1
         font-size: 48px
         line-height: 56px
@@ -33,6 +39,14 @@
 
 .paragraph
     margin: 0
+    color: $color-black
+    position: relative
+    &__anchor
+        position: absolute
+        bottom: calc(100% + 32px)
+        left: 0
+    &_grey
+        color: $color-grey
     &-lead
         font-size: 24px
         line-height: 32px
@@ -42,13 +56,9 @@
     &-simple
         font-size: 16px
         line-height: 24px
-        &_grey
-            color: #7D7D7D
     &-auxiliary
         font-size: 14px
         line-height: 20px
-        &_grey
-            color: #7D7D7D
 
 @media screen and (max-width: $mobileMaxWidth - 1)
     .paragraph

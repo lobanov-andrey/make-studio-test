@@ -25,14 +25,14 @@ export default function Home() {
     <>
       <CardWindow onClose={() => setWindowIsOpen(false)} open={windowIsOpen} />
 
-      <Columns>
+      <Columns horizontal="stretch">
         <Column>
           <Header onClickMenu={() => setWindowIsOpen(true)} />
         </Column>
         <Column desktop={4} tablet={3}></Column>
 
         <Column desktop={8} tablet={5}>
-          <H1>Тестовое задание</H1>
+          <H1>Тестовое задание </H1>
           <Space indent={2} />
           <LeadParagraph>Уровень: junior</LeadParagraph>
           <Space indent={8} />
@@ -45,13 +45,13 @@ export default function Home() {
         <Column desktop={8} tablet={5}>
           <Columns>
             <Column desktop={9}>
-              <Paragraph id="welcome">
+              <Paragraph anchor="welcome">
                 Привет! Твоё тестовое задание — грамотно заверстать эту прекрасную страничку. В шапке страницы укажи своё ФИО,
                 так всем будет удобнее. В менюхе под иконкой бургером мы хотели бы также видеть твои данные. <br />
                 Ну что, поехали?
               </Paragraph>
               <Space indent={10} />
-              <H2 id="grid">Сетка</H2>
+              <H2 anchor="grid">Сетка</H2>
               <Space indent={3} />
               <Paragraph>
                 Задание предполагает адаптивную вёрстку. Используется 3 состояния в зависимости от устройства. Сетка «резиновая»
@@ -126,7 +126,7 @@ export default function Home() {
 
           <Columns>
             <Column desktop={9}>
-              <H2 id="typography">Типографика</H2>
+              <H2 anchor="typography">Типографика</H2>
               <Space indent={3} />
               <Paragraph>Используется шрифт Graphik. На телефонах стили типографики переопределяются</Paragraph>
             </Column>
@@ -211,7 +211,7 @@ export default function Home() {
 
           <Space indent={10} />
 
-          <H2 id="ui">UI</H2>
+          <H2 anchor="ui">UI</H2>
           <Space indent={3} />
 
           <H3>Текстовое поле</H3>
@@ -277,6 +277,7 @@ export default function Home() {
                   { text: 'Теорема Эскобара', id: 4 },
                 ]}
               />
+              <Space indent={3} />
             </Column>
             <Column desktop={4}>
               <Select
@@ -301,6 +302,7 @@ export default function Home() {
               <AuxiliaryParagraph color="grey">Без состояния</AuxiliaryParagraph>
               <Space indent={2} />
               <Button>Отправить</Button>
+              <Space indent={3} />
             </Column>
             <Column desktop={1}></Column>
             <Column desktop={3}>
@@ -321,6 +323,7 @@ export default function Home() {
               <Checkbox text="Выбери меня" />
               <Space indent={3} />
               <Checkbox text="Птица счастья завтрашнего дня" />
+              <Space indent={4} />
             </Column>
             <Column desktop={6}>
               <Radio
@@ -374,7 +377,7 @@ export default function Home() {
               Это может нам поют свои
             </Paragraph>
           </Accordion>
-          <Space indent={8} />
+          <Space indent={5} />
         </Column>
       </Columns>
     </>
