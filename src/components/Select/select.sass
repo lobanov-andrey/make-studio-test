@@ -12,7 +12,7 @@
         display: flex
         align-items: center
         justify-content: space-between
-        height: 34px
+        height: 36px
     &__placeholder
         position: absolute
         bottom: 50%
@@ -30,10 +30,17 @@
         transition: 0.25s
         animation-timing-function: ease
         width: 9px
+        min-width: 9px
         height: 9px
         display: flex
         align-items: center
         justify-content: center
+        padding-top: 3px
+    &__selected
+        color: $color-black
+        user-select: none
+        font-size: 16px
+        line-height: 24px
     &__arrow
         width: 100%
     &:hover &__line
@@ -48,7 +55,7 @@
         right: 0
         display: block
         position: absolute
-    &__water-fall
+    &__drop-down
         background: $color-white
         box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.08)
         position: absolute
@@ -68,7 +75,7 @@
             &:hover
                 background: $color-purple
                 color: $color-white
-    &__water-fall-animation
+    &__drop-down-animation
         will-change: transform
         &-enter 
             opacity: 0

@@ -3,7 +3,7 @@ import { CSSTransition } from 'react-transition-group'
 import './input.sass'
 
 export default function Input(
-  props: React.HTMLAttributes<HTMLInputElement> & { errors?: { error: string; validReqex?: RegExp }[] }
+  props: React.HTMLAttributes<HTMLInputElement> & { errors?: { error: string; validReqex: RegExp }[] }
 ) {
   const { errors } = props
   const [value, setValue] = useState(props.defaultValue || '')
@@ -14,9 +14,12 @@ export default function Input(
       if (value) {
         for (let index = 0; index < errors.length; index++) {
           const error = errors[index]
-          setError(error.validReqex ? (error.validReqex.test(`${value}`) ? '' : error.error) : '')
-          break
+          const reqexIsMatch = error.validReqex.test(`${value}`)
+          if (!reqexIsMatch) {
+            return setError(error.error)
+          }
         }
+        setError('')
       } else {
         setError('')
       }
@@ -30,20 +33,22 @@ export default function Input(
 
   return (
     <div className="input">
-      <div className="input__top-indent"></div>
+      <div className="input__placeholder-place"></div>
       <div className="input__shell">
-        <CSSTransition in={!!error} timeout={300} classNames="input__error-animation">
-          <span className="input__error">{error}</span>
-        </CSSTransition>
         <span
           className={`input__placeholder ${value ? 'input__placeholder_top' : ''} ${error ? 'input__placeholder_error' : ''}`}
         >
           {props.placeholder}
         </span>
-        <input onChange={change} className="input__field" type="email" {...props} placeholder="" />
+
+        <input {...props} onChange={change} className="input__field" type="email" placeholder="" />
         <div className={`input__line ${error ? 'input__line_error' : ''}`} />
+
+        <CSSTransition in={!!error} timeout={300} classNames="input__error-animation">
+          <span className="input__error">{error}</span>
+        </CSSTransition>
       </div>
-      <div className="input__bottom-indent"></div>
+      <div className="input__error-place"></div>
     </div>
   )
 }

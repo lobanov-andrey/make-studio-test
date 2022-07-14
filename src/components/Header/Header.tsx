@@ -9,8 +9,8 @@ export default function Header({ onClickMenu }: { onClickMenu: () => void }) {
       <div className="header__left">
         <Logo />
         <div className="header__info">
-          <AuxiliaryParagraph>Иванов</AuxiliaryParagraph>
-          <AuxiliaryParagraph color="grey">Иван Иванович</AuxiliaryParagraph>
+          <AuxiliaryParagraph>Андреев</AuxiliaryParagraph>
+          <AuxiliaryParagraph color="grey">Андрей Андревич</AuxiliaryParagraph>
         </div>
       </div>
       <div onClick={onClickMenu} className="header__menu" />

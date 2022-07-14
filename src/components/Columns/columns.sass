@@ -1,13 +1,17 @@
 @import '../../variables.sass'
     
+$desktopCountColumns: 12
 $desktopColumns: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
-$tabletColumns: 1, 2, 3, 4, 5, 6, 7, 8
-$mobileColumns: 1, 2, 3, 4
-
 $desktopContentWidth: 1312px
 $desktopColumnIndent: 16px
+
+$tabletCountColumns: 8
+$tabletColumns: 1, 2, 3, 4, 5, 6, 7, 8
 $tabletContentWidth: 928px
 $tabletColumnIndent: 16px
+
+$mobileCountColumns: 4
+$mobileColumns: 1, 2, 3, 4
 $mobileContentWidth: 424px
 $mobileColumnIndent: 12px
     
@@ -19,6 +23,12 @@ $mobileColumnIndent: 12px
     justify-content: flex-start
     flex-wrap: wrap
     width: 100%
+    @media screen and (max-width: $tabletMaxWidth)
+        &
+            max-width: $tabletContentWidth !important
+    @media screen and (max-width: $mobileMaxWidth)
+        &
+            max-width: $mobileContentWidth !important
     &_vertical
         &-center
             align-items: center
@@ -32,7 +42,6 @@ $mobileColumnIndent: 12px
         &-stretch
             align-items: stretch
     &__column
-        box-sizing: border-box
         width: 100%
         padding: 0 #{$desktopColumnIndent}
         &_vertical
@@ -53,16 +62,16 @@ $mobileColumnIndent: 12px
             margin: 0 -#{$desktopColumnIndent}
         @each $desktopColumn in $desktopColumns
             &_desktop-#{$desktopColumn}
-                width: #{calc($desktopColumn / 12 * 100) + "%"}
-        @media screen and (max-width: $tabletMaxWidth - 1)
+                width: #{calc($desktopColumn / $desktopCountColumns * 100) + "%"}
+        @media screen and (max-width: $tabletMaxWidth)
             .columns
                 margin: 0 -#{$tabletColumnIndent}
             &
                 width: 100% !important
             @each $tabletColumn in $tabletColumns
                 &_tablet-#{$tabletColumn}
-                    width: #{calc($tabletColumn / 8 * 100) + "%"} !important
-        @media screen and (max-width: $mobileMaxWidth - 1)
+                    width: #{calc($tabletColumn / $tabletCountColumns * 100) + "%"} !important
+        @media screen and (max-width: $mobileMaxWidth)
             .columns
                 margin: 0 -#{$mobileColumnIndent}
             &
@@ -70,13 +79,5 @@ $mobileColumnIndent: 12px
                 padding: 0 #{$mobileColumnIndent} !important
             @each $mobileColumn in $mobileColumns
                 &_mobile-#{$mobileColumn}
-                    width: #{calc($mobileColumn / 4 * 100) + "%"} !important
-
-@media screen and (max-width: $tabletMaxWidth - 1)
-    .columns
-        max-width: $tabletContentWidth !important
-
-@media screen and (max-width: $mobileMaxWidth - 1)
-    .columns
-        max-width: $mobileContentWidth !important
+                    width: #{calc($mobileColumn / $mobileCountColumns * 100) + "%"} !important
 

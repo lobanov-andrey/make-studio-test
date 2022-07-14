@@ -29,20 +29,21 @@ export default function Home() {
         <Column>
           <Header onClickMenu={() => setWindowIsOpen(true)} />
         </Column>
-        <Column desktop={4} tablet={3}></Column>
+        <Column desktop={3} tablet={3}></Column>
 
-        <Column desktop={8} tablet={5}>
+        <Column desktop={9} tablet={5}>
+          <Space indent={2} />
           <H1>Тестовое задание </H1>
           <Space indent={2} />
           <LeadParagraph>Уровень: junior</LeadParagraph>
           <Space indent={8} />
         </Column>
 
-        <Column desktop={4} tablet={3}>
+        <Column desktop={3} tablet={3}>
           <Sidebar />
         </Column>
 
-        <Column desktop={8} tablet={5}>
+        <Column desktop={9} tablet={5}>
           <Columns>
             <Column desktop={9}>
               <Paragraph anchor="welcome">
@@ -120,7 +121,7 @@ export default function Home() {
               </Column>
             ))}
           </Columns>
-          <Space indent={4} />
+          <Space indent={6} />
           <Image src={picMobile} />
           <Space indent={8} />
 
@@ -132,7 +133,7 @@ export default function Home() {
             </Column>
           </Columns>
 
-          <Space indent={8} />
+          <Space indent={6} />
 
           <Tabs
             tabs={[
@@ -140,7 +141,7 @@ export default function Home() {
                 name: 'Десктоп',
                 children: (
                   <>
-                    <Space indent={8} />
+                    <Space indent={6} />
                     <Columns>
                       {[
                         { name: 'Заголовок H1, 48/56, bold', exaple: <H1>Текст заголовка</H1> },
@@ -162,7 +163,7 @@ export default function Home() {
                           <Column desktop={8}>{row.exaple}</Column>
                           {index != rows.length - 1 ? (
                             <Column>
-                              <Space indent={4} />
+                              <Space indent={6} />
                             </Column>
                           ) : null}
                         </>
@@ -175,7 +176,7 @@ export default function Home() {
                 name: 'Телефон',
                 children: (
                   <>
-                    <Space indent={8} />
+                    <Space indent={6} />
                     <Columns>
                       {[
                         { name: 'Заголовок H1, 48/56, bold', exaple: <H1>Текст заголовка</H1> },
@@ -197,7 +198,7 @@ export default function Home() {
                           <Column desktop={8}>{row.exaple}</Column>
                           {index != rows.length - 1 ? (
                             <Column>
-                              <Space indent={4} />
+                              <Space indent={6} />
                             </Column>
                           ) : null}
                         </>
@@ -212,7 +213,7 @@ export default function Home() {
           <Space indent={10} />
 
           <H2 anchor="ui">UI</H2>
-          <Space indent={3} />
+          <Space indent={6} />
 
           <H3>Текстовое поле</H3>
           <Space indent={4} />
@@ -260,7 +261,7 @@ export default function Home() {
               />
             </Column>
           </Columns>
-          <Space indent={8} />
+          <Space indent={9} />
 
           <H3>Выпадающий список</H3>
           <Space indent={3} />
@@ -300,18 +301,18 @@ export default function Home() {
           <Columns>
             <Column desktop={3}>
               <AuxiliaryParagraph color="grey">Без состояния</AuxiliaryParagraph>
-              <Space indent={2} />
+              <Space indent={3} />
               <Button>Отправить</Button>
               <Space indent={3} />
             </Column>
             <Column desktop={1}></Column>
             <Column desktop={3}>
               <AuxiliaryParagraph color="grey">Неактивна</AuxiliaryParagraph>
-              <Space indent={2} />
+              <Space indent={3} />
               <Button disabled={true}>Отправить</Button>
             </Column>
           </Columns>
-          <Space indent={8} />
+          <Space indent={5} />
 
           <H3>Чекбокс, радиобаттон</H3>
           <Space indent={4} />
@@ -335,10 +336,10 @@ export default function Home() {
               />
             </Column>
           </Columns>
-          <Space indent={8} />
+          <Space indent={4} />
 
           <H3>Аккордеон</H3>
-          <Space indent={4} />
+          <Space indent={2} />
           <Accordion title="Аккордеон">
             <Paragraph>
               Гоpдость полными вагонами золотыми погонами <br />С юга дyют молодые вет… <br />
@@ -351,7 +352,7 @@ export default function Home() {
               Это может нам поют свои
             </Paragraph>
           </Accordion>
-          <Space indent={3} />
+          <Space indent={1} />
           <Accordion title="Аккордеон">
             <Paragraph>
               Гоpдость полными вагонами золотыми погонами <br />С юга дyют молодые вет… <br />
@@ -364,7 +365,7 @@ export default function Home() {
               Это может нам поют свои
             </Paragraph>
           </Accordion>
-          <Space indent={3} />
+          <Space indent={1} />
           <Accordion title="Аккордеон">
             <Paragraph>
               Гоpдость полными вагонами золотыми погонами <br />С юга дyют молодые вет… <br />

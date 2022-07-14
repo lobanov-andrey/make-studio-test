@@ -16,7 +16,7 @@ export default function Select({ open, onClose }: { open: boolean; onClose: () =
               <Column desktop={2} mobile={1} tablet={1}>
                 <Logo />
               </Column>
-              <Column desktop={7} mobile={2} tablet={6}>
+              <Column desktop={10} mobile={2} tablet={6}>
                 <AuxiliaryParagraph color="grey">Completed the task</AuxiliaryParagraph>
               </Column>
               <Column horizontal="end" desktop={7} mobile={1} tablet={1}>
@@ -25,7 +25,7 @@ export default function Select({ open, onClose }: { open: boolean; onClose: () =
             </Columns>
             <Columns>
               <Column desktop={2} tablet={1}></Column>
-              <Column desktop={7} tablet={7}>
+              <Column desktop={10} tablet={7}>
                 <Space indent={8} />
                 <H1>Lobanov Andrey</H1>
                 <Space indent={3} />
@@ -40,7 +40,7 @@ export default function Select({ open, onClose }: { open: boolean; onClose: () =
 
           <Columns>
             <Column desktop={2} tablet={1}></Column>
-            <Column desktop={7} tablet={7}>
+            <Column desktop={10} tablet={7}>
               <a className="card-window__link" href="https://telegram.me/lobanov_dev">
                 <span className="card-window__link__icon">
                   <svg
